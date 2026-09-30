@@ -1,0 +1,106 @@
+.login-page {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 1.5rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.login-atmosphere {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 70% 50% at 12% 15%, rgba(18, 185, 129, 0.28), transparent 55%),
+    radial-gradient(ellipse 55% 45% at 90% 85%, rgba(255, 255, 255, 0.08), transparent 50%),
+    linear-gradient(155deg, #061512 0%, #0d2621 42%, #12332e 100%);
+  z-index: 0;
+}
+
+.login-atmosphere::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  background-size: 48px 48px;
+  mask-image: radial-gradient(circle at center, black, transparent 75%);
+  pointer-events: none;
+}
+
+.login-panel {
+  position: relative;
+  z-index: 1;
+  width: min(430px, 100%);
+  padding: 2rem 1.65rem;
+  border-radius: 1.4rem;
+  background: rgba(255, 255, 255, 0.96);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  box-shadow: 0 30px 70px rgba(0, 0, 0, 0.35);
+  animation: rise-in 0.55s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.login-brand-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.9rem;
+}
+
+.login-logo {
+  flex-shrink: 0;
+  width: 3.1rem;
+  height: 3.1rem;
+  border-radius: 0.85rem;
+  overflow: hidden;
+  box-shadow: 0 12px 28px rgba(18, 185, 129, 0.35);
+}
+
+.login-eyebrow {
+  margin: 0;
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #0a8f63;
+  font-weight: 800;
+}
+
+.login-brand {
+  margin: 0.35rem 0 0;
+  font-family: var(--font-display);
+  font-size: clamp(1.7rem, 5vw, 2.2rem);
+  letter-spacing: -0.045em;
+  color: #0f1f1c;
+  line-height: 1.05;
+}
+
+.login-lead {
+  margin: 0.9rem 0 0;
+  color: #5d726c;
+  line-height: 1.5;
+  font-size: 0.95rem;
+}
+
+.login-form {
+  margin-top: 1.55rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+@keyframes rise-in {
+  from {
+    opacity: 0;
+    transform: translateY(14px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@media (max-width: 480px) {
+  .login-panel {
+    padding: 1.5rem 1.15rem;
+  }
+}
